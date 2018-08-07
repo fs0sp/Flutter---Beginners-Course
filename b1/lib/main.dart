@@ -6,17 +6,29 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget{
   @override
-  Widget build(BuildContext context) {
+  MyAppState createState()=>  MyAppState();
+}
+
+
+class MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context){
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("HELL"),
+        title: new Text("Name Here"),
       ),
-      body: new Center(child: new Text("HElllo broo")),
+      body: new Container(
+        padding: new EdgeInsets.all(32.0),
+        child: new Column(
+          children: <Widget>[
+            new Text("Add widgets Here")
+          ],
+        ),
+      ),
     );
   }
 }
-
 
 
