@@ -1,4 +1,4 @@
-package com.example.button1;
+package com.example.b2;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
