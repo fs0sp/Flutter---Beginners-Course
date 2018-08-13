@@ -13,11 +13,17 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  String _value = 'sds';
+  String _value = '';
 
   void _onChange(String _value) {
     setState(() {
-          _value = 'dsds';
+          _value = 'Change :$_value';
+        });
+  }
+
+  void _onSubmit(String value) {
+    setState(() {
+          _value = 'Submit: $_value';
         });
   }
 
@@ -33,7 +39,19 @@ class _MyAppState extends State<MyApp> {
         child: new Center(
           child: new Column(
             children: <Widget>[
-              new Text("Add wid here")
+              new Text("$_value"),
+              new TextField(
+                decoration: new InputDecoration(
+                  labelText: 'Hello',
+                  hintText: 'Hint',
+                  icon: new Icon(Icons.people)
+                ),
+                autocorrect: true,
+                autofocus: true,
+                keyboardType: TextInputType.text,
+                onChanged: _onChange,
+                onSubmitted: _onSubmit,
+              )
             ],
           ),
         ),
