@@ -18,7 +18,7 @@ class MyAppState extends State<MyApp> {
 
   void _onPressed() {
     setState(() {
-      _value = "My Name is Shivam!";
+      _value = new DateTime.now().toString();
     });
   }
 
@@ -30,17 +30,22 @@ class MyAppState extends State<MyApp> {
       ),
       body: new Container(
         padding: new EdgeInsets.all(32.0),
+        child: new Center(
         child: new Column(
           children: <Widget>[
             new Text(_value),
             new RaisedButton(
               onPressed: _onPressed,
-              child: new Text("Click Me")
+              child: new Text("CLICK Me")
+            ),
+            new FlatButton(
+              onPressed: _onPressed,
+              child: new Text("Click Me"),
             )
           ],
         ),
       ),
-    );
+    ));
   }
 }
 

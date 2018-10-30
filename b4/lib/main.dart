@@ -14,12 +14,18 @@ class MyApp extends StatefulWidget{
 
 class MyAppState extends State<MyApp> {
 
-  String _value = "Hello World";
+  int _val = 0;
 
-  void _onPressed() {
+  void _add() {
     setState(() {
-      _value = "My Name is Shivam!";
+      _val++;
     });
+  }
+
+  void _subtract() {
+    setState(() {
+          _val--;
+        });
   }
 
   @override
@@ -30,17 +36,22 @@ class MyAppState extends State<MyApp> {
       ),
       body: new Container(
         padding: new EdgeInsets.all(32.0),
+        child: new Center(
         child: new Column(
           children: <Widget>[
-            new Text(_value),
-            new RaisedButton(
-              onPressed: _onPressed,
-              child: new Text("Click Me")
+            new Text("Value is =  ${_val}"),
+            new IconButton(
+              icon: new Icon(Icons.add),
+              onPressed: _add,),
+            new IconButton(
+              icon: new Icon(Icons.remove),
+              onPressed: _subtract,
             )
+            
           ],
         ),
       ),
-    );
+    ));
   }
 }
 
