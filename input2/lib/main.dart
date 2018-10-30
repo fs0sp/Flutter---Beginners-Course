@@ -39,8 +39,8 @@ class _State extends State<MyApp> {
         child: new Column(
           children: <Widget>[
             
-            new Checkbox(value: _value1, onChanged: _value1Changed),
-            new CheckboxListTile(value: _value2, onChanged: _value2Changed)
+            new Checkbox(value: _value1, onChanged: _value1Changed,),
+            new CheckboxListTile(value: _value2, onChanged: _value2Changed, title: new Text("Hello Boss"))
           ],
         ),
       ),
